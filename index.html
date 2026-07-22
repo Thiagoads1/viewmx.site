@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ViewMax — Tudo que você ama assistir, em um só lugar</title>
+<meta name="description" content="+4.000 canais, +50 mil filmes e séries, esportes ao vivo e todas as plataformas em 4K por menos de R$ 1 por dia. Garantia de 7 dias." />
+<meta property="og:title" content="ViewMax — Tudo em streaming por menos de R$ 1 por dia" />
+<meta property="og:description" content="+4.000 canais, +50 mil filmes e séries, esportes ao vivo e todos os streamings em 4K." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+:root{
+  --bg:#231717; --fg:#fafafa; --card:#2a1c1c; --muted:#3a2828; --muted-fg:#bda9a9;
+  --border:#3d2b2b; --brand:#ef3d3d; --brand-hover:#f24e4e; --brand-glow:rgba(239,61,61,.35);
+  --yellow:#facc15;
+}
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button{font:inherit; cursor:pointer; border:none; background:none; color:inherit}
+.container{max-width:1200px; margin:0 auto; padding:0 16px}
+.text-brand{color:var(--brand)}
+.text-muted{color:var(--muted-fg)}
+.btn{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; font-weight:700; border-radius:16px; padding:14px 24px; box-shadow:0 10px 30px -8px var(--brand-glow), inset 0 1px 0 rgba(255,255,255,.2); transition:transform .2s, box-shadow .2s}
+.btn:hover{background:var(--brand-hover); box-shadow:0 14px 40px -8px var(--brand-glow), inset 0 1px 0 rgba(255,255,255,.25); transform:translateY(-1px)}
+.btn-sm{padding:10px 20px; border-radius:999px; font-size:14px}
+.btn-block{display:block; width:100%; text-align:center; padding:14px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)); border:1px solid var(--border); border-radius:24px; box-shadow:0 10px 40px -20px rgba(0,0,0,.6)}
+.icon{width:20px; height:20px; display:inline-block; vertical-align:middle}
+.star{color:var(--yellow)}
+
+/* Top bar */
+.topbar{background:linear-gradient(90deg,#c72424,#ef3d3d,#c72424); color:#fff; font-size:14px; font-weight:600}
+.topbar .inner{display:flex; align-items:center; justify-content:center; gap:12px; padding:10px 16px; flex-wrap:wrap}
+.timer{display:inline-flex; gap:4px; align-items:center; font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.timer span.box{background:rgba(0,0,0,.3); padding:4px 8px; border-radius:6px}
+
+/* Header */
+.header{position:sticky; top:0; z-index:40; background:rgba(35,23,23,.85); backdrop-filter:blur(10px); border-bottom:1px solid rgba(61,43,43,.5)}
+.header .inner{display:flex; align-items:center; justify-content:space-between; padding:12px 16px}
+.logo{display:flex; align-items:center; gap:8px; font-weight:800; font-size:20px}
+.logo .mark{width:36px; height:36px; display:grid; place-items:center; background:var(--brand); border-radius:12px}
+
+/* Hero */
+.hero{position:relative; isolation:isolate; overflow:hidden; background:radial-gradient(ellipse at top, rgba(239,61,61,.25), transparent 60%)}
+.hero .bg{position:absolute; inset:0; z-index:0; opacity:.4; background-image:url(assets/hero-banner.jpg); background-repeat:repeat; background-size:480px auto; pointer-events:none}
+.hero .bg-overlay{position:absolute; inset:0; z-index:0; background:linear-gradient(180deg, rgba(35,23,23,.75), rgba(35,23,23,.85), var(--bg)); pointer-events:none}
+.hero .content{position:relative; z-index:10; display:grid; gap:40px; padding:60px 16px}
+@media(min-width:960px){.hero .content{grid-template-columns:1fr 1fr; padding:96px 16px}}
+.pill{display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border:1px solid var(--border); background:rgba(42,28,28,.6); border-radius:999px; font-size:12px; width:fit-content}
+h1.title{font-size:clamp(38px,7vw,72px); font-weight:900; line-height:1.05; letter-spacing:-.02em; margin:24px 0 0}
+.lead{margin-top:20px; max-width:560px; color:var(--muted-fg); font-size:18px}
+.lead b{color:var(--fg); font-weight:700}
+.cta-row{margin-top:28px; display:flex; flex-wrap:wrap; gap:16px; align-items:center}
+.guarantee{display:inline-flex; align-items:center; gap:8px; color:var(--muted-fg); font-size:14px}
+.devices{margin-top:32px; display:flex; flex-wrap:wrap; gap:12px 28px; font-size:14px; color:var(--muted-fg)}
+.devices span{display:inline-flex; gap:8px; align-items:center}
+.hero-img-wrap{position:relative}
+.hero-img-wrap::before{content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse at center, var(--brand-glow), transparent 70%); filter:blur(30px)}
+.hero-img-wrap img{border-radius:24px; width:100%}
+
+/* Stats */
+.stats{position:relative; z-index:10; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; padding:0 16px 60px; max-width:1200px; margin:0 auto}
+@media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr); gap:16px}}
+.stat{border:1px solid rgba(239,61,61,.3); background:rgba(0,0,0,.8); backdrop-filter:blur(10px); border-radius:16px; padding:16px; text-align:center; box-shadow:0 10px 30px -10px var(--brand-glow)}
+.stat .n{font-size:clamp(24px,4vw,36px); font-weight:900; color:var(--brand); text-shadow:0 0 12px rgba(239,68,68,.35); line-height:1.1}
+.stat .l{margin-top:4px; font-size:13px; color:rgba(250,250,250,.9); font-weight:500}
+
+/* Marquee */
+.marquee-wrap{position:relative; z-index:10; background:rgba(0,0,0,.85); border-top:1px solid rgba(239,61,61,.2); border-bottom:1px solid rgba(239,61,61,.2); backdrop-filter:blur(10px); padding:24px 0; overflow:hidden}
+.marquee-title{text-align:center; font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:rgba(250,250,250,.9); padding:0 16px 8px}
+.marquee{display:flex; gap:48px; padding:16px; width:max-content; animation:scroll 30s linear infinite}
+.marquee-reverse{animation-direction:reverse; animation-duration:45s}
+.marquee span{font-size:24px; font-weight:700; white-space:nowrap}
+@keyframes scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+/* Sections */
+section{padding:60px 0}
+@media(min-width:768px){section{padding:96px 0}}
+h2{font-size:clamp(32px,5vw,52px); font-weight:900; text-align:center; margin:0}
+.section-eyebrow{font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--brand); text-align:center}
+.section-sub{text-align:center; color:var(--muted-fg); margin-top:16px}
+
+/* Features grid */
+.features{display:grid; gap:20px; margin-top:48px; grid-template-columns:1fr}
+@media(min-width:640px){.features{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features{grid-template-columns:repeat(3,1fr)}}
+.feature{padding:24px; border-radius:16px}
+.feature .ic{width:44px; height:44px; border-radius:12px; background:var(--brand-glow); color:var(--brand); display:grid; place-items:center}
+.feature h3{margin:20px 0 8px; font-size:18px}
+.feature p{margin:0; color:var(--muted-fg); font-size:14px}
+
+/* Featured posters */
+.posters-row{display:flex; gap:20px; width:max-content; animation:scroll 45s linear infinite}
+.posters-wrap{overflow:hidden; margin-top:40px}
+.posters-wrap + .posters-wrap{margin-top:20px}
+.poster{position:relative; flex-shrink:0; width:200px; height:290px; border-radius:16px; overflow:hidden; border:1px solid var(--border); box-shadow:0 20px 60px -15px var(--brand-glow)}
+.poster img{width:100%; height:100%; object-fit:cover}
+.poster .grad{position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.7), transparent 60%)}
+.poster .tag{position:absolute; left:12px; right:12px; bottom:12px; background:var(--brand); color:#fff; font-size:11px; font-weight:700; padding:6px 10px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; width:fit-content}
+
+/* Compare */
+.compare{display:grid; gap:32px; padding:32px; border-radius:24px}
+@media(min-width:768px){.compare{grid-template-columns:1fr 1fr; padding:48px}}
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+.service{background:rgba(42,28,28,.6); border:1px solid var(--border); border-radius:12px; padding:14px; text-align:center}
+.service .n{font-size:14px; font-weight:600}
+.service .p{font-size:12px; color:var(--muted-fg); margin-top:4px}
+.big-price{font-size:60px; font-weight:900; color:var(--brand)}
+
+/* Plans */
+.plans{display:grid; gap:20px; margin-top:48px; grid-template-columns:1fr}
+@media(min-width:640px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{position:relative; padding:24px; border-radius:24px}
+.plan.highlight{outline:2px solid var(--brand)}
+.plan .badge{position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--brand); color:#fff; padding:4px 12px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:.1em}
+.plan h3{margin:12px 0 4px; font-size:20px}
+.plan .from{margin-top:20px; font-size:14px; color:var(--muted-fg); text-decoration:line-through}
+.plan .price{display:flex; align-items:baseline; gap:4px; margin-top:4px}
+.plan .price .cur{font-size:14px}
+.plan .price .num{font-size:44px; font-weight:900; color:var(--brand)}
+.plan .price .per{font-size:14px; color:var(--muted-fg)}
+.plan .note{font-size:12px; color:var(--muted-fg); margin-top:8px}
+.plan .save{margin-top:12px; display:inline-flex; align-items:center; gap:4px; background:rgba(250,204,21,.15); color:var(--yellow); padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700}
+.plan ul{margin:24px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px}
+.plan li{display:flex; gap:8px; font-size:14px; color:var(--muted-fg); align-items:flex-start}
+.plan li svg{color:var(--brand); flex-shrink:0; margin-top:2px}
+.plan .btn{margin-top:24px}
+
+.payments{margin-top:32px; text-align:center; color:var(--muted-fg); font-size:14px}
+.pill-list{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pill-list span{border:1px solid var(--border); background:rgba(42,28,28,.6); padding:6px 14px; border-radius:999px; font-size:12px; font-weight:600}
+
+/* Testimonials */
+.reviews{display:grid; gap:20px; margin-top:48px; grid-template-columns:1fr}
+@media(min-width:640px){.reviews{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.review{padding:24px; border-radius:16px}
+.review .head{display:flex; justify-content:space-between; align-items:center}
+.review .head .name{font-weight:600}
+.review p{margin:16px 0 0; color:var(--muted-fg); font-size:14px}
+.stars{display:inline-flex; gap:2px}
+.rating-inline{margin-top:16px; display:inline-flex; gap:8px; align-items:center}
+
+/* Guarantee */
+.guarantee-block{max-width:720px; margin:0 auto; padding:40px; border-radius:24px; text-align:center}
+.guarantee-block .badge-icon{margin:0 auto; width:64px; height:64px; border-radius:999px; background:rgba(250,204,21,.15); color:var(--yellow); display:grid; place-items:center}
+.guarantee-block h3{font-size:28px; margin:24px 0 12px; font-weight:900}
+.guarantee-block p{margin:0 auto; max-width:520px; color:var(--muted-fg)}
+
+/* FAQ */
+.faq{max-width:720px; margin:0 auto; border:1px solid var(--border); background:rgba(42,28,28,.4); border-radius:16px; overflow:hidden}
+.faq-item{border-top:1px solid var(--border)}
+.faq-item:first-child{border-top:none}
+.faq-q{display:flex; width:100%; align-items:center; justify-content:space-between; padding:20px 24px; text-align:left; font-weight:600; gap:16px}
+.faq-q svg{color:var(--brand); flex-shrink:0; transition:transform .2s}
+.faq-item.open .faq-q svg{transform:rotate(180deg)}
+.faq-a{padding:0 24px 20px; font-size:14px; color:var(--muted-fg); display:none}
+.faq-item.open .faq-a{display:block}
+
+/* Final CTA */
+.final{background:radial-gradient(ellipse at top, rgba(239,61,61,.25), transparent 60%); text-align:center; padding:96px 16px}
+.final .ic{margin:0 auto; width:56px; height:56px; border-radius:999px; background:var(--brand-glow); color:var(--brand); display:grid; place-items:center}
+
+/* Footer */
+footer{border-top:1px solid var(--border); background:rgba(42,28,28,.4); padding:40px 16px; text-align:center; color:var(--muted-fg); font-size:14px}
+footer .logo{justify-content:center; color:var(--fg); font-size:16px}
+footer p{max-width:720px; margin:16px auto}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+    <span>OFERTA RELÂMPAGO • Termina em</span>
+    <div class="timer">
+      <span class="box" id="t-h">02</span>:<span class="box" id="t-m">58</span>:<span class="box" id="t-s">58</span>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="inner container">
+    <a href="#" class="logo">
+      <span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></span>
+      View<span class="text-brand">max</span>
+    </a>
+    <a href="#planos" class="btn btn-sm">Assinar agora</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bg"></div>
+  <div class="bg-overlay"></div>
+  <div class="content container">
+    <div>
+      <div class="pill">
+        <svg class="icon" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" width="14" height="14"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg>
+        Mais de <b class="text-brand">&nbsp;120 mil clientes</b>&nbsp;satisfeitos
+      </div>
+      <h1 class="title">Tudo que você<br><span class="text-brand">ama assistir</span>,<br>em um só lugar.</h1>
+      <p class="lead"><b>+4.000 canais</b>, <b>+50 mil filmes e séries</b>, esportes ao vivo e todas as plataformas em qualidade <b>4K</b> — por menos de R$ 1 por dia.</p>
+      <div class="cta-row">
+        <a href="#planos" class="btn"><svg class="icon" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>Quero assinar agora</a>
+        <span class="guarantee">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          7 dias de garantia
+        </span>
+      </div>
+      <div class="devices">
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8"/></svg>Smart TV</span>
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><rect x="7" y="2" width="10" height="20" rx="2"/></svg>Celular</span>
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>Tablet</span>
+        <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><rect x="2" y="4" width="20" height="12" rx="2"/><path d="M8 22h8M12 16v6"/></svg>Computador</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="assets/hero-devices.jpg" alt="ViewMax em Smart TV, notebook, tablet e celular" width="1200" height="900" fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">+4.000</div><div class="l">Canais ao vivo</div></div>
+    <div class="stat"><div class="n">+50.000</div><div class="l">Filmes & Séries</div></div>
+    <div class="stat"><div class="n">+500</div><div class="l">Novelas completas</div></div>
+    <div class="stat"><div class="n">4K</div><div class="l">Qualidade Ultra HD</div></div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee-title">Conteúdo de todas as plataformas</div>
+    <div class="marquee" id="platforms">
+      <!-- filled via JS to duplicate -->
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-eyebrow">O QUE VOCÊ ENCONTRA</div>
+  <h2>Tudo o que você encontra na <span class="text-brand">ViewMax</span></h2>
+  <p class="section-sub">Um catálogo gigantesco, sempre atualizado, para toda a família.</p>
+  <div class="features">
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></svg></div><h3>+50.000 filmes</h3><p>Lançamentos, clássicos e dublados em qualidade 4K.</p></div>
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg></div><h3>Séries imperdíveis</h3><p>Temporadas completas e episódios atualizados toda semana.</p></div>
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17a2 2 0 0 0 2 2v0a2 2 0 0 0 2-2v-2.34M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div><h3>Esportes ao vivo</h3><p>Futebol, UFC, NBA, F1 e muito mais sem travar.</p></div>
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 3l1.9 5.8L20 10l-4.7 4.1L17 22l-5-3-5 3 1.7-7.9L4 10l6.1-1.2z"/></svg></div><h3>Todos os streamings</h3><p>Netflix, Prime, HBO, Disney+ e Globoplay em um só lugar.</p></div>
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>Canais infantis</h3><p>Desenhos, filmes e programação educativa segura.</p></div>
+    <div class="feature card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><h3>Sem travamentos</h3><p>Servidores premium com tecnologia anti-buffering.</p></div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="container">
+    <div class="section-eyebrow">DESTAQUES</div>
+    <h2>FILMES E SÉRIES <span class="text-brand">EM DESTAQUE</span></h2>
+    <p class="section-sub" style="max-width:620px;margin-left:auto;margin-right:auto">De lançamentos a doramas e novelas turcas, aqui você encontra as mais aclamadas séries e filmes do momento, tudo em um único lugar!</p>
+  </div>
+  <div class="posters-wrap"><div class="posters-row" id="row1"></div></div>
+  <div class="posters-wrap"><div class="posters-row marquee-reverse" id="row2"></div></div>
+  <div style="text-align:center;margin-top:48px">
+    <a href="#planos" class="btn"><svg class="icon" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>Quero meu acesso!</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="compare card">
+    <div>
+      <div class="section-eyebrow" style="text-align:left">A CONTA NÃO FECHA</div>
+      <h2 style="text-align:left; margin-top:12px">Pagar todos os streamings custaria <span style="color:var(--muted-fg); text-decoration:line-through">R$ 537/mês</span></h2>
+      <p style="color:var(--muted-fg); margin-top:24px">Com a ViewMax você tem <b style="color:var(--fg)">tudo isso e muito mais</b> por apenas:</p>
+      <div style="display:flex; align-items:baseline; gap:8px; margin-top:24px">
+        <span class="big-price">R$ 18,90</span><span style="color:var(--muted-fg)">/mês</span>
+      </div>
+      <a href="#planos" class="btn" style="margin-top:28px"><svg class="icon" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>Quero economizar agora</a>
+    </div>
+    <div class="services-grid" id="services"></div>
+  </div>
+</section>
+
+<section id="planos" class="container">
+  <div class="section-eyebrow">ESCOLHA O SEU PLANO</div>
+  <h2 style="margin-top:12px">Comece a assistir <span class="text-brand">hoje mesmo</span></h2>
+  <p class="section-sub">Sem fidelidade. Cancele quando quiser. Garantia de 7 dias.</p>
+  <div class="plans" id="plans"></div>
+  <div class="payments">
+    <div style="display:inline-flex; gap:8px; align-items:center">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--brand)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Pagamento 100% seguro
+    </div>
+    <div class="pill-list">
+      <span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span><span>AMEX</span><span>HIPER</span>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-eyebrow">PROVA SOCIAL REAL</div>
+  <h2 style="margin-top:12px">+120 mil clientes <span class="text-brand">satisfeitos</span></h2>
+  <p class="section-sub">Avaliações reais de quem já assina e usa todos os dias.</p>
+  <div style="text-align:center" class="rating-inline">
+    <span class="stars" id="starrow"></span>
+    <b>4,9/5</b><span style="color:var(--muted-fg); font-size:14px">(+12.300 avaliações)</span>
+  </div>
+  <div class="reviews" id="reviews"></div>
+  <div style="text-align:center; margin-top:40px">
+    <a href="#planos" class="btn"><svg class="icon" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>Quero fazer parte</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="guarantee-block card">
+    <div class="badge-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <h3>Garantia incondicional de 7 dias</h3>
+    <p>Você não corre nenhum risco. Se em até 7 dias não estiver 100% satisfeito, devolvemos cada centavo. Simples assim.</p>
+    <a href="#planos" class="btn btn-sm" style="margin-top:24px"><svg class="icon" viewBox="0 0 24 24" fill="#fff" width="16" height="16"><path d="M6 4l14 8-14 8z"/></svg>Quero garantir o meu acesso</a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Perguntas <span class="text-brand">frequentes</span></h2>
+  <div class="faq" id="faq" style="margin-top:40px"></div>
+</section>
+
+<section class="final">
+  <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+  <h2 style="margin-top:24px">Pronto para assistir <span class="text-brand">tudo</span>?</h2>
+  <p style="color:var(--muted-fg); margin-top:16px">Acesso liberado em até 5 minutos. Comece hoje mesmo por menos de R$ 1 por dia.</p>
+  <div style="margin-top:32px"><a href="#planos" class="btn"><svg class="icon" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>Ver planos e assinar</a></div>
+</section>
+
+<footer>
+  <div class="logo">
+    <span class="mark" style="width:28px;height:28px;border-radius:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></span>
+    View<span class="text-brand">max</span>
+  </div>
+  <p>Esta página não tem qualquer vínculo com Meta, Google, Facebook S/A ou qualquer plataforma de streaming citada. Os logos e marcas pertencem aos seus respectivos donos. A venda da plataforma ViewMax em outros sites é proibida.</p>
+  <p>© <span id="year"></span> ViewMax — Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// Countdown
+(function(){
+  let s = 3*3600 - 62;
+  const h=document.getElementById('t-h'), m=document.getElementById('t-m'), sec=document.getElementById('t-s');
+  const pad=n=>String(n).padStart(2,'0');
+  setInterval(()=>{
+    if(s>0)s--;
+    h.textContent=pad(Math.floor(s/3600));
+    m.textContent=pad(Math.floor((s%3600)/60));
+    sec.textContent=pad(s%60);
+  },1000);
+})();
+
+// Platforms marquee
+(function(){
+  const items=["Netflix","Prime Video","HBO Max","Disney+","Globoplay","Premiere","Paramount+","Apple TV+","Discovery+","Star+"];
+  const el=document.getElementById('platforms');
+  el.innerHTML=[...items,...items].map(t=>`<span>${t}</span>`).join('');
+})();
+
+// Posters
+(function(){
+  const posters=['assets/poster1.jpg','assets/poster2.jpg','assets/poster3.jpg','assets/poster4.jpg','assets/poster5.jpg','assets/poster6.jpg','assets/poster7.jpg'];
+  const play=`<svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>`;
+  const card=src=>`<div class="poster"><img src="${src}" alt="" loading="lazy"><div class="grad"></div><div class="tag">${play} ASSISTA AGORA</div></div>`;
+  document.getElementById('row1').innerHTML=[...posters,...posters].map(card).join('');
+  document.getElementById('row2').innerHTML=[...posters.slice().reverse(),...posters.slice().reverse()].map(card).join('');
+})();
+
+// Services
+(function(){
+  const s=[["Netflix","R$55"],["Prime","R$19"],["HBO","R$35"],["Disney+","R$33"],["Premiere","R$60"],["Paramount","R$24"],["Apple TV","R$21"],["Globoplay","R$50"],["+ muitos",""]];
+  document.getElementById('services').innerHTML=s.map(([n,p])=>`<div class="service"><div class="n">${n}</div>${p?`<div class="p">${p}</div>`:''}</div>`).join('');
+})();
+
+// Plans
+(function(){
+  const plans=[
+    {tag:"EXPERIMENTE",name:"Mensal",from:"R$ 37,80",price:"18,90",per:"/mês",note:"menos de R$ 0,63 por dia",cta:"Assinar Mensal",url:"https://lastlink.com/p/C4D767CF6/checkout-payment/"},
+    {tag:"ECONOMIZE 30%",name:"Trimestral",from:"R$ 56,70",price:"38,90",per:"/3 meses",note:"ou 3x de R$ 12,96",cta:"Assinar Trimestral",url:"https://lastlink.com/p/CE9612D4A/checkout-payment/"},
+    {tag:"MAIS VENDIDO",name:"Semestral",from:"R$ 113,40",price:"68,90",per:"/6 meses",note:"ou 6x de R$ 11,48",cta:"Assinar Semestral",highlight:true,url:"https://lastlink.com/p/C732240F2/checkout-payment/"},
+    {tag:"MELHOR OFERTA",name:"Anual",from:"R$ 226,80",price:"124,99",per:"/ano",note:"ou 12x de R$ 12,38 — apenas R$ 10,41/mês",cta:"Assinar Anual",save:"ECONOMIZE R$ 101,81",url:"https://lastlink.com/p/CF06472E4/checkout-payment/"},
+  ];
+  const features=["Acesso completo e sem fidelidade","+60 mil filmes, séries e canais","Qualidade SD / HD / FHD / 4K","Smart TV, Celular, TV Box, PC","Canais adultos (opcional)","Suporte 7 dias por semana"];
+  const check=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>`;
+  const play=`<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg>`;
+  document.getElementById('plans').innerHTML=plans.map(p=>`
+    <div class="plan card ${p.highlight?'highlight':''}">
+      <span class="badge">${p.tag}</span>
+      <h3>${p.name}</h3>
+      <div style="font-size:14px;color:var(--muted-fg)">Plano ViewMax</div>
+      <div class="from">De ${p.from}</div>
+      <div class="price"><span class="cur">R$</span><span class="num">${p.price}</span><span class="per">${p.per}</span></div>
+      <div class="note">${p.note}</div>
+      ${p.save?`<div class="save">⚡ ${p.save}</div>`:''}
+      <ul>${features.map(f=>`<li>${check}<span>${f}</span></li>`).join('')}</ul>
+      <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn-block">${p.cta}</a>
+    </div>`).join('');
+})();
+
+// Reviews
+(function(){
+  const reviews=[
+    {n:"Deivid Moraiso",s:4,msg:"Aplicativo sempre atualizado, tenho mais de 5 anos esse aplicativo, recomendo. Vlw ViewMax."},
+    {n:"Rosilene Nunes",s:5,msg:"Comprei para deixar meus filhos assistindo e tem todos os canais de desenhos, filmes e séries e ainda é protegido por senha os canais adultos. Loja muito séria."},
+    {n:"Robson Ribeiro",s:5,msg:"A ViewMax surpreende a cada nova produção. Parabéns! Quem ainda não é membro não tem noção do que está perdendo."},
+    {n:"Roberto Louzada",s:5,msg:"Serviço de ótima qualidade. Já tinha comprado um plano de 1 tela agora estou com 6, excelente suporte e instalação super fácil."},
+    {n:"Fabiano Souza",s:5,msg:"Fiquei com receio de ter caído em um golpe, mas assim que comprei já recebi a instrução para liberação junto com um suporte humano no whatsapp. Curtindo muito e qualidade muito boa!"},
+    {n:"Moacir da Silva",s:5,msg:"O melhor serviço que já comprei, minha família inteira já tem assinado."}
+  ];
+  const star=on=>`<svg width="16" height="16" viewBox="0 0 24 24" fill="${on?'#facc15':'none'}" stroke="${on?'#facc15':'#7a6767'}" stroke-width="2"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg>`;
+  document.getElementById('reviews').innerHTML=reviews.map(r=>`
+    <div class="review card">
+      <div class="head"><div class="name">${r.n}</div><div class="stars">${[1,2,3,4,5].map(i=>star(i<=r.s)).join('')}</div></div>
+      <p>${r.msg}</p>
+    </div>`).join('');
+  document.getElementById('starrow').innerHTML=[1,2,3,4,5].map(()=>star(true)).join('');
+})();
+
+// FAQ
+(function(){
+  const faqs=[
+    ["Como funciona a entrega?","Após a confirmação do pagamento (PIX em segundos / cartão imediato), você recebe os dados de acesso por e-mail e WhatsApp na hora."],
+    ["Funciona em qual dispositivo?","Smart TV (Samsung, LG, Roku, Android TV), TV Box, celular (Android e iOS), tablet, notebook e computador."],
+    ["Preciso de internet rápida?","A partir de 10 Mbps você assiste em HD. Para 4K recomendamos 25 Mbps. Funciona inclusive em internet via rádio."],
+    ["Tem fidelidade ou contrato?","Não. Você assina e cancela quando quiser, sem multa e sem burocracia."],
+    ["É seguro? Tem garantia?","Sim. Pagamento processado em ambiente seguro e 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor."],
+    ["Quantas telas posso usar?","2 telas simultâneas nos planos mensais e anuais e 3 telas no plano semestral."]
+  ];
+  const chev=`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>`;
+  const el=document.getElementById('faq');
+  el.innerHTML=faqs.map((f,i)=>`<div class="faq-item ${i===0?'open':''}"><button class="faq-q" data-i="${i}">${f[0]}${chev}</button><div class="faq-a">${f[1]}</div></div>`).join('');
+  el.addEventListener('click',e=>{
+    const b=e.target.closest('.faq-q'); if(!b) return;
+    b.parentElement.classList.toggle('open');
+  });
+})();
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
