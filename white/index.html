@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corso Completo di Teologia — Certificazione Internazionale</title>
+  <meta name="description" content="Corso completo di Teologia con oltre 35.000 pagine di materiali, certificato incluso e tutti i bonus. Accesso immediato e a vita per soli €15.">
+  <meta property="og:title" content="Corso Completo di Teologia — Certificazione Internazionale">
+  <meta property="og:description" content="Studia Teologia da casa tua: oltre 35.000 pagine, bonus esclusivi e certificato incluso. Offerta speciale €15.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+*, ::before, ::after { box-sizing: border-box; margin: 0px; padding: 0px; }
+
+:root { --navy: #0F2340; --navy-deep: #081527; --blue: #1B4C8C; --blue-light: #2E6FBE; --gold: #C9A227; --gold-light: #E8C96A; --cream: #FBF8F0; --paper: #F3EFE3; --orange: #D9642C; --orange-deep: #B94F1F; --green: #2E7D4F; --ink: #1C1C1C; --muted: #5B5548; }
+
+html { scroll-behavior: smooth; }
+
+body { background: var(--cream); color: var(--ink); font-family: "Source Serif 4", Georgia, serif; line-height: 1.6; }
+
+.container { max-width: 640px; margin: 0px auto; }
+
+img { display: block; max-width: 100%; }
+
+.top-banner { background: linear-gradient(135deg,var(--navy-deep),var(--navy) 60%,var(--blue)); padding: 22px 24px 26px; text-align: center; position: relative; overflow: hidden; }
+
+.top-banner::after { content: ""; position: absolute; inset: 0px; background: repeating-linear-gradient(115deg, rgba(201, 162, 39, 0.05) 0px, rgba(201, 162, 39, 0.05) 2px, transparent 2px, transparent 40px); pointer-events: none; }
+
+.top-banner .eyebrow { font-family: "Playfair Display", serif; font-size: 12px; letter-spacing: 0.22em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 6px; }
+
+.top-banner h1 { font-family: "Playfair Display", serif; font-weight: 800; font-size: clamp(24px, 7vw, 34px); color: rgb(255, 255, 255); line-height: 1.15; margin-bottom: 10px; }
+
+.top-banner .sub { color: var(--gold-light); font-size: 15px; letter-spacing: 0.03em; }
+
+.course-hero { background: linear-gradient(180deg, var(--blue) 0%, var(--navy) 100%); padding: 34px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+.course-hero .portrait { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--gold); overflow: hidden; box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 18px; }
+
+.course-hero .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 25%; display: block; }
+
+.course-hero h2 { font-family: "Playfair Display", serif; font-weight: 700; font-size: clamp(22px, 6vw, 30px); color: var(--gold-light); letter-spacing: 0.02em; }
+
+.course-hero p.tag { font-style: italic; color: rgb(216, 225, 238); font-size: 14px; }
+
+.main-card { background: rgb(255, 255, 255); margin: -18px 16px 0px; border-radius: 10px; box-shadow: rgba(15, 35, 64, 0.18) 0px 12px 40px; overflow: hidden; position: relative; z-index: 2; }
+
+.card-header { background: var(--blue); color: rgb(255, 255, 255); text-align: center; padding: 22px 20px 18px; }
+
+.card-header .kicker { font-family: "Playfair Display", serif; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px; }
+
+.card-header h3 { font-family: "Playfair Display", serif; font-size: clamp(20px, 5.5vw, 26px); font-weight: 700; }
+
+.card-body { padding: 26px 22px 8px; }
+
+.study-banner { background: var(--paper); border-left: 4px solid var(--blue); padding: 14px 16px; border-radius: 4px; font-family: "Playfair Display", serif; font-weight: 700; font-size: 16px; color: var(--navy); text-align: center; margin-bottom: 20px; }
+
+ul.benefits { list-style: none; margin-bottom: 22px; }
+
+ul.benefits li { position: relative; padding-left: 26px; margin-bottom: 11px; font-size: 14.5px; color: rgb(43, 43, 43); }
+
+ul.benefits li::before { content: "✦"; position: absolute; left: 0px; top: 1px; color: var(--gold); font-size: 13px; }
+
+ul.benefits li b { color: var(--navy); }
+
+.cta-btn { display: block; width: 100%; background: linear-gradient(135deg, rgb(201, 162, 39), rgb(232, 201, 106), rgb(201, 162, 39)) 0% 0% / 200% 100%; color: var(--navy-deep); font-family: "Playfair Display", serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-align: center; padding: 16px 20px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; border-radius: 5px; cursor: pointer; box-shadow: rgba(201, 162, 39, 0.4) 0px 4px 22px; margin-bottom: 10px; text-transform: uppercase; }
+
+.cta-btn.secondary { background: linear-gradient(135deg,var(--orange),var(--orange-deep)); color: rgb(255, 255, 255); box-shadow: rgba(217, 100, 44, 0.4) 0px 4px 22px; }
+
+.cta-note { text-align: center; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+
+.certified-pill { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--navy); color: var(--gold-light); font-family: "Playfair Display", serif; font-size: 12px; letter-spacing: 0.12em; padding: 10px; border-radius: 5px; margin-bottom: 16px; }
+
+.materials-header { background: var(--orange); color: rgb(255, 255, 255); text-align: center; font-family: "Playfair Display", serif; font-weight: 700; font-size: 16px; letter-spacing: 0.03em; padding: 16px 20px; margin: 30px 16px 0px; border-radius: 8px 8px 0px 0px; }
+
+.materials-list { background: rgb(255, 255, 255); margin: 0px 16px; padding: 20px 22px 26px; border-radius: 0px 0px 8px 8px; box-shadow: rgba(15, 35, 64, 0.1) 0px 8px 28px; columns: 1; }
+
+.materials-list ul { list-style: none; }
+
+.materials-list li { font-size: 14px; padding: 7px 0px 7px 22px; border-bottom: 1px dashed rgba(27, 76, 140, 0.15); position: relative; color: rgb(43, 43, 43); }
+
+.materials-list li:last-child { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
+
+.materials-list li::before { content: "📖"; position: absolute; left: 0px; top: 6px; font-size: 11px; }
+
+.section-pad { padding: 34px 16px 0px; }
+
+.bonus-banner { background: var(--orange); color: rgb(255, 255, 255); text-align: center; font-family: "Playfair Display", serif; font-weight: 700; font-size: 15px; line-height: 1.4; padding: 18px 22px; border-radius: 8px; margin-bottom: 22px; }
+
+.bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
+
+.bonus-card { background: rgb(255, 255, 255); border: 1px solid rgba(15, 35, 64, 0.1); border-radius: 8px; padding: 16px 12px; text-align: center; box-shadow: rgba(15, 35, 64, 0.06) 0px 4px 14px; position: relative; }
+
+.bonus-card .badge { position: absolute; top: -9px; right: -6px; background: var(--gold); color: var(--navy-deep); font-family: "Playfair Display", serif; font-weight: 700; font-size: 10px; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 6px; }
+
+.bonus-card .book-icon { width: 52px; height: 70px; margin: 6px auto 10px; background: linear-gradient(135deg,var(--navy),var(--blue)); border-radius: 2px 6px 6px 2px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--gold-light); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 6px; }
+
+.bonus-card p { font-size: 12.5px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+
+.testi-title { text-align: center; font-family: "Playfair Display", serif; font-weight: 700; color: var(--navy); font-size: 19px; margin: 36px 0px 6px; padding: 0px 16px; }
+
+.testi-sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+
+.comments-panel { background: rgb(255, 255, 255); margin: 0px 16px; border-radius: 8px; box-shadow: rgba(15, 35, 64, 0.1) 0px 8px 24px; padding: 6px 18px 10px; }
+
+.comment { display: flex; gap: 12px; padding: 14px 0px; border-bottom: 1px solid rgb(239, 234, 224); }
+
+.comment:last-child { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
+
+.avatar { width: 38px; height: 38px; min-width: 38px; border-radius: 50%; background: linear-gradient(135deg,var(--blue-light),var(--navy)); display: flex; align-items: center; justify-content: center; color: rgb(255, 255, 255); font-family: "Playfair Display", serif; font-weight: 700; font-size: 14px; overflow: hidden; }
+
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.comment-body { flex: 1 1 0%; }
+
+.comment-bubble { background: var(--paper); border-radius: 14px; padding: 9px 14px; font-size: 13px; color: rgb(43, 43, 43); display: inline-block; }
+
+.comment-bubble .name { font-weight: 700; color: var(--navy); display: block; font-size: 12.5px; margin-bottom: 2px; }
+
+.comment-meta { font-size: 11px; color: var(--muted); margin-top: 4px; padding-left: 4px; }
+
+.includes-banner { background: var(--orange); color: rgb(255, 255, 255); text-align: center; font-family: "Playfair Display", serif; font-weight: 700; font-size: 17px; padding: 20px; border-radius: 8px; margin: 36px 16px 20px; }
+
+.includes-list { margin: 0px 16px 30px; background: rgb(255, 255, 255); border-radius: 8px; box-shadow: rgba(15, 35, 64, 0.1) 0px 8px 24px; padding: 8px 20px; }
+
+.include-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0px; border-bottom: 1px solid rgb(239, 234, 224); }
+
+.include-item:last-child { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
+
+.include-check { color: var(--green); font-size: 20px; line-height: 1; margin-top: 2px; }
+
+.include-item b { color: var(--orange-deep); }
+
+.include-item span { font-size: 14px; color: rgb(43, 43, 43); }
+
+.flash-offer { background: radial-gradient(ellipse at top, #E8783D, var(--orange-deep)); margin: 0px 16px; border-radius: 10px 10px 0px 0px; padding: 22px 20px; text-align: center; color: rgb(255, 255, 255); position: relative; overflow: hidden; }
+
+.book-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+
+.book-row .mini-book { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+
+.flash-offer h4 { font-family: "Playfair Display", serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; }
+
+.flash-offer .sub { font-size: 13px; letter-spacing: 0.05em; margin-top: 4px; }
+
+.flash-tag { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--navy-deep); font-family: "Playfair Display", serif; font-weight: 700; font-size: 11px; padding: 4px 10px; border-radius: 20px; transform: rotate(8deg); box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px; }
+
+.price-panel { background: rgb(234, 243, 236); margin: 0px 16px; padding: 28px 22px; text-align: center; }
+
+.price-panel .offer-title { font-family: "Playfair Display", serif; font-weight: 800; color: var(--green); font-size: 18px; letter-spacing: 0.02em; margin-bottom: 14px; }
+
+.price-panel .course-name { font-size: 14px; color: rgb(43, 43, 43); font-weight: 600; margin-bottom: 10px; }
+
+.price-panel .old-price { text-decoration: line-through; color: rgb(138, 138, 138); font-size: 16px; margin-bottom: 2px; }
+
+.price-panel .for-only { font-size: 12px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-bottom: 2px; }
+
+.price-panel .price { font-family: "Playfair Display", serif; font-weight: 800; color: var(--green); font-size: 44px; margin-bottom: 10px; }
+
+.price-panel .terms { font-size: 13px; color: rgb(43, 43, 43); font-weight: 600; }
+
+.form-note { background: var(--paper); margin: 0px 16px; padding: 18px 22px 30px; border-radius: 0px 0px 10px 10px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+footer { text-align: center; padding: 34px 20px 44px; }
+
+footer .flogo { font-family: "Playfair Display", serif; font-size: 14px; letter-spacing: 0.15em; color: var(--navy); margin-bottom: 10px; }
+
+footer .fcopy { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 420px) {
+  .bonus-grid { grid-template-columns: 1fr 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<div class="top-banner">
+  <p class="eyebrow">Prezzo Promozionale a Tempo Limitato</p>
+  <h1>Assicurati l'Accesso Oggi</h1>
+</div>
+
+<div class="course-hero">
+  <div class="portrait"><img decoding="async" src="./img/t0.jpg" alt="Teologo che studia la Bibbia"></div>
+  <h2>Corso Completo di Teologia</h2>
+  <p class="tag">Programma di Certificazione Internazionale</p>
+</div>
+
+<div class="container">
+  <div class="main-card">
+    <div class="card-header">
+      <p class="kicker">Teologia Biblica</p>
+      <h3>Programma di Certificazione</h3>
+    </div>
+    <div class="card-body">
+      <div class="study-banner">Studia Teologia Comodamente da Casa Tua</div>
+
+      <ul class="benefits">
+        <li><b>Oltre 35.000 pagine</b> di materiali di studio approfonditi</li>
+        <li><b>Bonus:</b> Manuale speciale su come predicare e interpretare la Bibbia</li>
+        <li><b>Bonus:</b> Schemi per le prediche</li>
+        <li><b>Bonus:</b> Dizionario ebraico-inglese</li>
+        <li><b>Bonus:</b> Lessico del Nuovo Testamento</li>
+        <li><b>Bonus:</b> Corso di public speaking: come predicare la Parola di Dio</li>
+        <li>...e molto altro ancora!</li>
+      </ul>
+
+      <div class="certified-pill">🎓 CERTIFICATO INCLUSO</div>
+      <a href="https://checkout.kashpay.com.br/checkout/checkout-1787790192421" class="cta-btn" style="text-decoration:none;">Ottieni Accesso Immediato</a>
+    </div>
+  </div>
+
+  <div class="materials-header">Scopri Alcuni dei Materiali che Riceverai</div>
+  <div class="materials-list">
+    <ul>
+      <li>Introduzione Biblica</li>
+      <li>Teologia Sistematica – Dio</li>
+      <li>Teologia Sistematica – Cristologia</li>
+      <li>Teologia Sistematica – Pneumatologia</li>
+      <li>Teologia Sistematica – Antropologia</li>
+      <li>Teologia Sistematica – Ecclesiologia</li>
+      <li>Teologia Sistematica – Soteriologia</li>
+      <li>Teologia Sistematica – Angelologia</li>
+      <li>Teologia Sistematica – Escatologia</li>
+      <li>Geografia Biblica</li>
+      <li>Panoramica dell'Antico Testamento</li>
+      <li>Panoramica del Nuovo Testamento</li>
+      <li>Evangelizzazione Strategica</li>
+      <li>Sette ed Eresie</li>
+      <li>Teologia Pastorale</li>
+      <li>Ermeneutica</li>
+      <li>Omiletica</li>
+      <li>Storia della Chiesa</li>
+      <li>Storia di Israele I</li>
+      <li>Storia di Israele II</li>
+      <li>Teologia dell'Antico Testamento I</li>
+      <li>Teologia dell'Antico Testamento II</li>
+      <li>Teologia del Nuovo Testamento I</li>
+      <li>Teologia del Nuovo Testamento II</li>
+      <li>Introduzione all'Antico Testamento I</li>
+      <li>Introduzione all'Antico Testamento II</li>
+      <li>Introduzione al Nuovo Testamento I</li>
+      <li>Introduzione al Nuovo Testamento II</li>
+      <li>Etica Cristiana</li>
+      <li>Teologia Missionaria</li>
+      <li>Teologia Contemporanea</li>
+      <li>Apologetica Cristiana</li>
+      <li>Visione Cristiana del Mondo</li>
+      <li>Archeologia</li>
+      <li>Esegesi Biblica I</li>
+      <li>Esegesi Biblica II</li>
+      <li>Religioni a Confronto</li>
+      <li>Storia del Pensiero Cristiano</li>
+      <li>Educazione Cristiana</li>
+      <li>Sociologia della Religione</li>
+      <li>Psicologia Cristiana</li>
+      <li>Leadership Cristiana</li>
+      <li>Filosofia Generale</li>
+      <li>Filosofia Cristiana</li>
+      <li>Ebraico Biblico I</li>
+      <li>Ebraico Biblico II</li>
+      <li>...e molto altro ancora!</li>
+    </ul>
+  </div>
+
+  <div class="section-pad">
+    <div class="bonus-banner">Iscriviti Oggi al Corso di Teologia e Ricevi<br>Questi Bonus Senza Costi Aggiuntivi:</div>
+    <img decoding="async" src="./img/t1.jpg" alt="Tutti i libri bonus del Corso di Teologia" style="width:100%;border-radius:10px;box-shadow:0 8px 26px rgba(15,35,64,0.18);margin-bottom:20px;">
+  </div>
+
+  <p class="testi-title">Chi Lo Ha Acquistato Lo Consiglia</p>
+  <p class="testi-sub">Guarda alcuni commenti</p>
+  <div class="comments-panel">
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t2.jpg" alt="chiara"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Chiara Fontana</span>Molto bello.</div>
+        <div class="comment-meta">4g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t3.jpg" alt="marisa"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Marisa Ventura</span>L'ho appena acquistato, eccellente.</div>
+        <div class="comment-meta">1s · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t4.jpg" alt="carlo"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Carlo Benedetti</span>Corso benedetto, lo adoro.</div>
+        <div class="comment-meta">2g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t5.jpg" alt="elena"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Elena Fiorillo</span>L'ho comprato e ricevuto, lo consiglio.</div>
+        <div class="comment-meta">2s · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t6.jpg" alt="damiano"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Damiano Ferraro</span>Che corso meraviglioso.</div>
+        <div class="comment-meta">4g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t7.jpg" alt="alessia"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Alessia Ferretti</span>Avevo dei dubbi, ma l'ho ricevuto e sono soddisfatta.</div>
+        <div class="comment-meta">2g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t8.jpg" alt="serena"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Serena Caruso</span>Sono felice dell'acquisto.</div>
+        <div class="comment-meta">1g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t9.jpg" alt="bruno"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Bruno Costanzo</span>L'ho acquistato e già ricevuto, molto buono.</div>
+        <div class="comment-meta">3g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t10.jpg" alt="emanuele"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Emanuele Sartori</span>Sì, lo consiglio, è una benedizione!</div>
+        <div class="comment-meta">1g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t11.jpg" alt="tiziana"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Tiziana Longo</span>Ho già iniziato a studiare. Avete anche un corso di cappellania?</div>
+        <div class="comment-meta">2g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t12.jpg" alt="ottavio"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Ottavio Marchetti</span>Grazie mille, l'ho ricevuto, contenuto molto valido, congratulazioni.</div>
+        <div class="comment-meta">2g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t13.jpg" alt="caio"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Caio Lombardi</span>Molto buono.</div>
+        <div class="comment-meta">1g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar"><img decoding="async" src="./img/t14.jpg" alt="luciano"></div>
+      <div class="comment-body">
+        <div class="comment-bubble"><span class="name">Luciano Montano</span>Lo consiglio vivamente.</div>
+        <div class="comment-meta">1g · Mi piace · Rispondi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="includes-banner">Acquistando Oggi<br>Riceverai Tutto Questo:</div>
+  <div class="includes-list">
+    <div class="include-item"><span class="include-check">✔</span><span><b>GUIDE AVANZATE COMPLETE</b> DI STUDIO TEOLOGICO</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>BONUS 1 –</b> NOTA SPECIALE: COME LEGGERE E INTERPRETARE LA BIBBIA</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>BONUS 2 –</b> DIZIONARIO BIBLICO EBRAICO-INGLESE</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>BONUS 3 –</b> L'ARTE DELLA PREDICAZIONE BIBLICA</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>BONUS 4 –</b> LESSICO DEL NUOVO TESTAMENTO</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>BONUS 5 –</b> COME LEGGERE LA BIBBIA PER TUTTO IL SUO VALORE</span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>ACCESSO IMMEDIATO E A VITA</b></span></div>
+    <div class="include-item"><span class="include-check">✔</span><span><b>+ REGALO SPECIALE</b></span></div>
+  </div>
+
+  <div class="flash-offer" style="padding:0;">
+    <img decoding="async" src="./img/t15.jpg" alt="Offerta lampo: ricevi 6 classici cristiani rari gratis" style="width:100%;display:block;border-radius:10px 10px 0 0;">
+  </div>
+
+  <div class="price-panel">
+    <p class="offer-title">OFFERTA SPECIALE!</p>
+    <p class="course-name">CORSO AVANZATO DI TEOLOGIA –<br>FORMAZIONE COMPLETA + TUTTI I BONUS</p>
+    <p class="old-price">era €97</p>
+    <p class="for-only">Per Soli</p>
+    <p class="price">€15</p>
+    <p class="terms">Pagamento unico, nessun abbonamento<br>Accesso immediato e a vita</p>
+  </div>
+
+  <div class="form-note">
+    Inserisci i tuoi dati personali e i dettagli di pagamento nel modulo qui sotto per assicurarti questo prezzo speciale. Se lo desideri, puoi selezionare prodotti aggiuntivi e, alla fine, cliccare su "Acquista Ora".
+    <div style="margin-top:16px;">
+      <a href="https://checkout.kashpay.com.br/checkout/checkout-1787790192421" class="cta-btn secondary" style="text-decoration:none;">Acquista Ora — Solo €15</a>
+    </div>
+  </div>
+
+  <footer>
+    <p class="flogo">✦ CORSO COMPLETO DI TEOLOGIA ✦</p>
+    <p class="fcopy">© 2025 Programma di Certificazione Internazionale. Tutti i diritti riservati.<br>Questo prodotto non garantisce risultati specifici. I risultati variano da persona a persona.</p>
+  </footer>
+</div>
+
+</body>
+</html>
